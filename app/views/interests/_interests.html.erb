@@ -1,0 +1,16 @@
+<% @interests.each do |interest| %>
+  <%= link_to "#", data: {toggle: "modal", target: "#interest-modal#{interest.id}"} do %>
+    <%= image_tag interest.photo.url(:thumb) %>
+  <% end %>
+
+  <div class="modal fade" id="interest-modal<%= interest.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="interest-form">
+          <%= image_tag interest.photo.url(:large) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

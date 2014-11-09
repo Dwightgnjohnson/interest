@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Singlepageapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link  href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css" media="all" rel="stylesheet">
+    <link  href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="all" rel="stylesheet">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <%= link_to "New Interest", "#", class: "btn btn-default", data: {toggle: "modal", target: "#newInterestModal"} %>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="newInterestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div id="interest-form">
+        <%= render partial: 'interests/form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <%= yield %>
+</div>
+</body>
+</html>

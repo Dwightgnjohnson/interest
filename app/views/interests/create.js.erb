@@ -1,0 +1,10 @@
+<% if @interest.errors.any? %>
+  $("#interest-form").html("<%= j render partial: 'interests/form' %>");
+
+<% else %>
+
+  $("#newInterestModal").modal("hide");
+  $("#interests").html("<%= j render partial: 'interests/interests' %>");
+  $("#interest-form").html("<%= j render partial: 'interests/form' %>");
+
+<% end %>
