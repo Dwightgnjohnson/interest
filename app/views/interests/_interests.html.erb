@@ -1,13 +1,25 @@
 <% @interests.each do |interest| %>
-  <%= link_to "#", data: {toggle: "modal", target: "#interest-modal#{interest.id}"} do %>
-    <%= image_tag interest.photo.url(:thumb) %>
-  <% end %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= link_to "#", data: {toggle: "modal", target: "#interest-modal#{interest.id}"} do %>
+      <%= image_tag interest.photo.url(:large) %>
+        <% end %>
+        <div class="caption">
+          <h3><%= interest.notes %></h3>
+          <p><a href="<%= interest.url %>" class="btn btn-primary" role="button"><i class="fa fa-external-link"></i> Go to Website</a></p>
+        </div>
+      </div>
+    </div>
 
   <div class="modal fade" id="interest-modal<%= interest.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= interest.notes %></h4>
+      </div>
         <div id="interest-form">
-          <%= image_tag interest.photo.url(:large) %>
+<%= image_tag interest.photo.url(:large), class: "img-responsive" %>
         </div>
       </div>
     </div>
