@@ -65,5 +65,10 @@
 </div>
   <%= yield %>
 </div>
+  <%if user_signed_in?%>
+    <div class="container">
+    <%= paginate @interests %>
+    </div>
+  <%end%>
 </body>
 </html>

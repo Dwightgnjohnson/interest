@@ -3,9 +3,8 @@ class InterestsController < ApplicationController
     before_action :authenticate_user!
 
   def index
-    @interests = Interest.all
+    @interests = Interest.all.order(:photo).page params[:page]
     @interest = Interest.new
-
   end
 
   def create
