@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'interests#index'
 
   get 'interests/new' => "interests#new", as: :new_interest

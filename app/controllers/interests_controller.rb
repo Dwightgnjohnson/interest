@@ -1,7 +1,11 @@
 class InterestsController < ApplicationController
+
+    before_action :authenticate_user!
+
   def index
     @interests = Interest.all
     @interest = Interest.new
+
   end
 
   def create
