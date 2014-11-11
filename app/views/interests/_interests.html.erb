@@ -5,7 +5,7 @@
       <%= image_tag interest.photo.url(:large) %>
         <% end %>
         <div class="caption">
-          <h3><%= interest.notes %></h3>
+          <h3><%= interest.notes[0,25] %></h3>
           <p><a href="<%= interest.url %>" class="btn btn-primary" role="button"><i class="fa fa-external-link"></i> Go to Website</a></p>
         </div>
       </div>

@@ -5,6 +5,7 @@ class InterestsController < ApplicationController
   def index
     @interests = Interest.all.order(:photo).page params[:page]
     @interest = Interest.new
+    @interests = @interests.search(params[:search]) if params[:search].present?
   end
 
   def create
