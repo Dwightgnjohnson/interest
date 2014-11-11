@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141110195832) do
     t.string   "url"
     t.string   "photo"
     t.text     "notes"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

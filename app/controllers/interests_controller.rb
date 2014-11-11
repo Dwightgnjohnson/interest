@@ -13,5 +13,6 @@ class InterestsController < ApplicationController
     @interest.save
     @interests = Interest.all
     @interest = Interest.new
+
   end
 end

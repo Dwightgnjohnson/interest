@@ -4,6 +4,7 @@ class CreateInterests < ActiveRecord::Migration
       t.string :url
       t.string :photo
       t.text :notes
+      t.integer :user_id
 
       t.timestamps
     end
